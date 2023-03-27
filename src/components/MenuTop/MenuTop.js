@@ -40,5 +40,3 @@ const navigate = useNavigate();
     items={menuItems}
         />
     </Top>
-  )
-}
