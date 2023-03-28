@@ -1,14 +1,27 @@
-import './App.scss';
+import './App.scss'
+import React from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import AllRoutesProject from './config/routes';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-    <h1>Rescates UAM, Bienvenidos</h1>
-    <h2>Esperamos les sea de mucha utilidad nuestro sistema</h2>
-    <h3>Pronto habrán nuevos cambios</h3>
-    <h4>Feature-2</h4>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        {AllRoutesProject.map((route,index) => {
+          <Route
+          key = {index}
+          path = {route.path}
+          element={
+            <route.layout>
+              <route.component />
+            </route.layout>
+          }
+          ></Route>
+        })}
+      </Routes>
+    </BrowserRouter>
   );
 }
 
-export default App;
+export default App
+
