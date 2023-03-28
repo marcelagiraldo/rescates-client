@@ -8,7 +8,7 @@ import { BarChartOutlined, BarsOutlined } from "@ant-design/icons/lib/icons"
 export const MenuTop = (props) => {
     const {Top} = Layout;
     const location = useLocation();
-const navigate = useNavigate();
+    const navigate = useNavigate();
 
     const menuItems=[
         {
@@ -28,15 +28,15 @@ const navigate = useNavigate();
         const path=e.path
         console.log("di clic en el menu" + path);
         navigate(path);
-
     };
-  return (
-    <Top className="menu-top" Collapsed ={props.menuCollapsed}>
-        <Menu
-        
-        mode="inline"
-    defaultSelectedKeys={[location.pathname]}
-    onClick= {menuClick}
-    items={menuItems}
-        />
-    </Top>
+    return (
+        <Top className="menu-top" Collapsed ={props.menuCollapsed}>
+            <Menu
+                mode="inline"
+                defaultSelectedKeys={[location.pathname]}
+                onClick= {menuClick}
+                items={menuItems}
+            />
+        </Top>
+    )
+}
